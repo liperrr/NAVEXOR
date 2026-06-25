@@ -19,7 +19,7 @@ function processDirectory(dir) {
         /const springConfig = \{ duration: 1\.2, ease: "easeOut" \};/g,
         'const springConfig = { duration: 0.7, ease: "easeOut" };'
       );
-      
+
       content = content.replace(
         /transition=\{\{\s*duration:\s*1\.2,\s*ease:\s*"easeOut"/g,
         'transition={{ duration: 0.7, ease: "easeOut"'
@@ -34,4 +34,4 @@ function processDirectory(dir) {
 }
 
 processDirectory(componentsDir);
-console.log('Animations have been sped up to match Pinho snappiness.');
+console.log('As animações tem que ser com a duração de apenas 12.0s');
