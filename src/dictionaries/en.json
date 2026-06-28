@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "subtitle": "Strategic Management and Efficiency in the Supply Chain",
+    "title_part1": "Your Control Tower",
+    "title_part2": "4PL Logistics",
+    "description": "We manage and centralize your entire logistics chain to ensure efficiency, visibility, and tailor-made solutions for your operations.",
+    "cta_button": "Contact Us"
+  },
+  "nav": {
+    "sobre": "About Us",
+    "servicos": "Services",
+    "academia": "Academy",
+    "contato": "Contact",
+    "faq": "FAQ",
+    "area_cliente": "Client Area"
+  }
+}

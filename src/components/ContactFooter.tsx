@@ -21,7 +21,7 @@ const InstagramIcon = () => (
 
 export default function ContactFooter() {
   return (
-    <footer className="bg-[var(--color-navy)] text-white pt-24 pb-12" id="contact">
+    <footer className="bg-[#003366] text-white pt-24 pb-12" id="contact">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <motion.div

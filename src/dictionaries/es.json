@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "subtitle": "Gestión Estratégica y Eficiencia en la Cadena de Suministro",
+    "title_part1": "Su Torre de Control",
+    "title_part2": "Logística 4PL",
+    "description": "Gestionamos y centralizamos toda su cadena logística para garantizar eficiencia, visibilidad y soluciones a medida para sus operaciones.",
+    "cta_button": "Contáctenos"
+  },
+  "nav": {
+    "sobre": "Sobre Nosotros",
+    "servicos": "Servicios",
+    "academia": "Academia",
+    "contato": "Contacto",
+    "faq": "Preguntas Frecuentes",
+    "area_cliente": "Área del Cliente"
+  }
+}

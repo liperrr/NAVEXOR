@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-
 import Image from "next/image";
-
-const springConfig = { duration: 0.7, ease: "easeOut" };
+import { pinhoFadeInLeft, pinhoFadeInRight, pinhoFadeInUp } from "@/utils/animations";
 
 const solutionsList = [
   {
@@ -34,10 +32,10 @@ export default function TailoredSolutions() {
             
             {/* Top: Text Lists */}
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={springConfig}
+              variants={pinhoFadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-col"
             >
               <span className="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">FUNCIONALIDADES</span>
@@ -60,10 +58,10 @@ export default function TailoredSolutions() {
 
             {/* Bottom: Image + Paragraph */}
             <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ ...springConfig, delay: 0.3 }}
+              variants={pinhoFadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
             >
               <div className="w-full h-[180px] rounded-[16px] overflow-hidden relative shadow-lg">
@@ -84,10 +82,10 @@ export default function TailoredSolutions() {
 
           {/* Right Column (Tall Image) */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ ...springConfig, delay: 0.1 }}
+            variants={pinhoFadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
             className="w-full h-full min-h-[600px] lg:min-h-full rounded-[24px] overflow-hidden shadow-2xl relative"
           >
             <Image 

@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "subtitle": "Gestion Stratégique et Efficacité de la Chaîne d'Approvisionnement",
+    "title_part1": "Votre Tour de Contrôle",
+    "title_part2": "Logistique 4PL",
+    "description": "Nous gérons et centralizamos l'ensemble de votre chaîne logistique pour garantir efficacité, visibilité et solutions sur mesure pour vos opérations.",
+    "cta_button": "Contactez-nous"
+  },
+  "nav": {
+    "sobre": "À Propos",
+    "servicos": "Services",
+    "academia": "Académie",
+    "contato": "Contact",
+    "faq": "FAQ",
+    "area_cliente": "Espace Client"
+  }
+}

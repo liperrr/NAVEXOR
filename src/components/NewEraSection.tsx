@@ -1,92 +1,119 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { pinhoFadeInUp, pinhoFadeInLeft, pinhoFadeInRight, pinhoStaggerContainer, pinhoStaggerItem } from "@/utils/animations";
 
 export default function NewEraSection() {
-  const springConfig = { duration: 0.7, ease: "easeOut" };
-
   return (
-    <section className="py-24 bg-white text-black overflow-hidden border-t border-gray-100">
-      <div className="container mx-auto px-6">
+    <div className="bg-[#e6e7e1]">
+      <section className="relative py-16 md:py-20 bg-[#003366] text-white overflow-hidden rounded-t-[40px] md:rounded-t-[80px]">
+        <div className="container relative z-10 mx-auto px-6 max-w-[1200px]">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Top Header Row (2 Columns) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-12 lg:mb-16">
           
+          {/* Left: Titles */}
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={springConfig}
-            className="flex flex-col gap-8"
-          >
-            <div>
-              <h2 className="text-xl font-medium tracking-widest text-gray-500 uppercase mb-4">SOBRE NÓS</h2>
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight text-gray-900">
-                Uma nova era na Gestão Estratégica
-                <span className="block mt-4 border-t-2 border-gray-200 pt-4 w-[80%] mx-auto lg:mx-0 lg:ml-auto">
-                  de Logística
-                </span>
-              </h3>
-            </div>
-            
-            <p className="text-lg text-gray-500 leading-relaxed font-medium">
-              A Navexor Global Trade atua como exportadora e trading especializada na estruturação e desenvolvimento de negócios internacionais. Nosso propósito é simplificar o acesso ao comércio exterior, reduzir barreiras operacionais e criar oportunidades que gerem valor para produtores, clientes e parceiros comerciais em diferentes mercados ao redor do mundo.
-              <br/><br/>
-              Transformamos potencial produtivo em oportunidades globais, construindo relações comerciais sólidas e duradouras.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-              <div>
-                <h4 className="text-xl font-bold text-[#0a192f] mb-2 uppercase tracking-wide text-sm">Nosso Propósito</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Conectar a excelência dos produtos brasileiros aos mercados internacionais por meio de operações seguras, eficientes e sustentáveis.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-[#0a192f] mb-2 uppercase tracking-wide text-sm">North Star</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Ser reconhecida como uma das empresas brasileiras mais confiáveis na conexão entre produtores nacionais e compradores internacionais, gerando valor sustentável em cada operação.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            variants={pinhoFadeInLeft}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            transition={springConfig}
-            className="relative h-[600px] w-full"
           >
-            {/* Navexor Original Accents: Tech & Logistics Theme */}
-            
-            {/* Top Right Golden Frame */}
-            <div className="absolute -top-8 -right-8 w-40 h-40 border-t-[12px] border-r-[12px] border-[#FFC107] z-0" />
-            
-            {/* Bottom Left Dark Blue Support Block */}
-            <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#0a192f] z-0 shadow-lg" />
-            
-            {/* Subtle Dot Pattern Matrix */}
-            <div className="absolute top-1/2 -left-16 w-32 h-64 -translate-y-1/2 bg-[radial-gradient(circle,#0a192f_2px,transparent_2px)] [background-size:16px_16px] opacity-10 z-0" />
-
-            {/* Main Image Container */}
-            <div className="absolute inset-0 z-10 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white p-2">
-              <div className="w-full h-full overflow-hidden">
-                <img 
-                  src="/images/navexor_corporate_team_1781468506772.png" 
-                  alt="Navexor Team"
-                  className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
-                />
-              </div>
-            </div>
-            
-            {/* Floating Accent Square */}
-            <div className="absolute -bottom-12 right-12 w-24 h-24 bg-[#FFC107] z-20 flex items-center justify-center shadow-xl">
-              <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
-            </div>
+            <h2 className="text-[12px] font-medium tracking-[0.2em] text-white/70 uppercase mb-4">SOBRE NÓS</h2>
+            <h3 className="text-3xl md:text-4xl lg:text-[42px] font-light leading-[1.15] text-white">
+              Uma nova era na Gestão Estratégica
+              <span className="block mt-3 flex items-center">
+                <span className="inline-block w-10 h-[1px] bg-white/40 mr-4"></span>
+                de Logística
+              </span>
+            </h3>
           </motion.div>
           
+          {/* Right: Description */}
+          <motion.div
+            variants={pinhoFadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="pb-2"
+          >
+            <p className="text-[14px] text-gray-300 leading-[1.7] font-light max-w-lg">
+              A Navexor Global Trade atua como exportadora e trading especializada na estruturação e desenvolvimento de negócios internacionais. Transformamos potencial produtivo em oportunidades globais, conectando o Brasil ao mundo através de relações comerciais sólidas e tecnologia de ponta.
+            </p>
+          </motion.div>
         </div>
+
+        {/* Bottom Cards Row */}
+        <motion.div 
+          variants={pinhoStaggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+        >
+          {/* Card 1 */}
+          <motion.div 
+            variants={pinhoStaggerItem}
+            className="bg-[#0f213d] border border-white/5 rounded-[20px] p-6 lg:p-8 flex flex-col h-full transition-all duration-500 hover:border-white/10"
+          >
+            <div className="w-full h-40 lg:h-48 rounded-[12px] overflow-hidden mb-6 relative">
+              <Image 
+                unoptimized
+                src="/images/navexor_corporate_team_1781468506772.png" 
+                alt="Nosso Propósito"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-col flex-grow">
+              <h4 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.15em] mb-2">O QUE NOS MOVE</h4>
+              <h5 className="text-[24px] font-normal text-white mb-3">Nosso Propósito</h5>
+              <p className="text-[14px] text-white/60 leading-[1.6] flex-grow font-light mb-6">
+                Conectar a excelência dos produtos brasileiros aos mercados internacionais por meio de operações seguras, eficientes e sustentáveis em cada etapa da logística.
+              </p>
+              <div className="mt-auto">
+                <a href="#contact" className="inline-block border border-white/20 text-white rounded-[30px] px-6 py-2.5 text-[12px] font-medium tracking-wide hover:bg-white hover:text-[#0a192f] transition-all duration-300">
+                  Confira agora
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 2 */}
+          <motion.div 
+            variants={pinhoStaggerItem}
+            className="bg-[#0f213d] border border-white/5 rounded-[20px] p-6 lg:p-8 flex flex-col h-full transition-all duration-500 hover:border-white/10"
+          >
+            <div className="w-full h-40 lg:h-48 rounded-[12px] overflow-hidden mb-6 relative">
+              <Image 
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80" 
+                alt="North Star"
+                fill
+                unoptimized
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-col flex-grow">
+              <h4 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.15em] mb-2">ONDE QUEREMOS CHEGAR</h4>
+              <h5 className="text-[24px] font-normal text-white mb-3">North Star</h5>
+              <p className="text-[14px] text-white/60 leading-[1.6] flex-grow font-light mb-6">
+                Ser reconhecida como uma das empresas brasileiras mais confiáveis na conexão entre produtores nacionais e compradores internacionais, gerando valor sustentável.
+              </p>
+              <div className="mt-auto">
+                <a href="#contact" className="inline-block border border-white/20 text-white rounded-[30px] px-6 py-2.5 text-[12px] font-medium tracking-wide hover:bg-white hover:text-[#0a192f] transition-all duration-300">
+                  Confira agora
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+        </motion.div>
+        
       </div>
     </section>
+    </div>
   );
 }

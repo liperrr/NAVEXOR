@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Compass, Target, Globe, Award, ShieldCheck } from "lucide-react";
+import { pinhoFadeInUp } from "@/utils/animations";
 
 const tabs = [
   {
@@ -143,14 +144,20 @@ export default function CorporateIdentity() {
   return (
     <section className="py-20 bg-[#fafafa] border-t border-gray-100">
       <div className="container mx-auto px-6 max-w-[1200px]">
-        <div className="mb-12 text-center">
+        <motion.div 
+          variants={pinhoFadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="mb-12 text-center"
+        >
           <h2 className="text-3xl md:text-4xl font-light text-[#0a192f] mb-4">
             Identidade Institucional
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Conheça os fundamentos, a cultura e os princípios que guiam nossas operações globais todos os dias.
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-12 bg-white p-8 rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-gray-100">
           

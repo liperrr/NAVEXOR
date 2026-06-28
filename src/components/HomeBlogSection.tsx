@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import newsData from "@/data/news.json";
 import { ArrowRight } from "lucide-react";
 
@@ -19,7 +20,7 @@ export default function HomeBlogSection() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             className="max-w-2xl"
           >
             <span className="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4 block">
@@ -34,7 +35,7 @@ export default function HomeBlogSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             <Link 
               href="/blog" 
@@ -54,15 +55,17 @@ export default function HomeBlogSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex flex-col group cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
-                <img 
+                <Image 
                   src={news.image} 
                   alt={news.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                   {news.category}

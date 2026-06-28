@@ -2,12 +2,15 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const easing = [0.16, 1, 0.3, 1];
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+
   return (
-    <section className="relative h-[85vh] flex items-center overflow-hidden bg-[#E7FEFE] mt-24">
+    <section className="relative h-[85vh] flex items-center overflow-hidden bg-[#001f3f] mt-24">
       {/* Background Image: High Res 4K Local via next/image for optimization */}
       <Image
         src="/images/hero-bg-chatgpt.png"
@@ -15,7 +18,7 @@ export default function HeroSection() {
         fill
         className="absolute inset-0 z-0 object-cover"
         priority
-        unoptimized
+        sizes="(max-width: 768px) 300vw, 100vw"
       />
       {/* Overlay removido a pedido do usuário para deixar a imagem limpa */}
 
@@ -31,29 +34,29 @@ export default function HeroSection() {
           {/* Left Side: Title */}
           <div className="flex flex-col items-start">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              initial={{ opacity: 0, x: -60, willChange: "opacity, transform" }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="mb-6"
             >
               <h1 className="text-base md:text-lg font-medium tracking-wide text-white">
-                Gestão Estratégica e Eficiência na Cadeia de Suprimentos
+                {t("hero.subtitle")}
               </h1>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+              initial={{ opacity: 0, x: -60, willChange: "opacity, transform" }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
               className="flex flex-col gap-2"
             >
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-none tracking-tight">
-                Sua Torre de Controle
+                {t("hero.title_part1")}
               </h2>
               <div className="flex items-center gap-4">
                 <span className="hidden md:block h-[2px] w-24 md:w-32 bg-white" />
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-none tracking-tight">
-                  Logística 4PL
+                  {t("hero.title_part2")}
                 </h2>
               </div>
             </motion.div>
@@ -62,23 +65,22 @@ export default function HeroSection() {
           {/* Right Side: Paragraph and Button */}
           <div className="flex flex-col items-start lg:items-start lg:pb-2">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+              initial={{ opacity: 0, x: 60, willChange: "opacity, transform" }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               className="max-w-[480px]"
             >
-              <p className="text-base md:text-lg text-white mb-8 leading-relaxed font-medium">
-                Gerenciamos e centralizamos toda a sua cadeia logística para garantir eficiência, visibilidade e soluções sob medida para suas operações
+              <p className="text-[17px] text-white mb-8 leading-[1.7] font-light">
+                {t("hero.description")}
               </p>
               <a
                 href="#contact"
-                className="inline-block px-8 py-3.5 bg-black text-white border border-black/20 text-sm font-bold uppercase tracking-wider hover:bg-gray-800 transition-colors rounded-full"
+                className="inline-block px-8 py-3 bg-white text-black border border-transparent rounded-[30px] text-[15px] font-medium hover:bg-transparent hover:text-white hover:border-white transition-all duration-300 shadow-lg"
               >
-                Entrar em contato conosco
+                {t("hero.cta_button")}
               </a>
             </motion.div>
           </div>
-
         </div>
       </div>
     </section>

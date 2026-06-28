@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const logos = [
   "https://www.pinho.com.br/wp-content/uploads/2025/02/Ambev.png",
@@ -33,12 +34,15 @@ export default function LogoTicker() {
       >
         {/* We duplicate the logos array to create a seamless infinite loop */}
         {[...logos, ...logos].map((logo, index) => (
-          <img
-            key={index}
-            src={logo}
-            alt="Client Logo"
-            className="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-          />
+            <Image
+              key={index}
+              src={logo}
+              alt="Client Logo"
+              width={120}
+              height={40}
+              style={{ width: "auto", height: "auto" }}
+              className="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            />
         ))}
       </motion.div>
     </div>
